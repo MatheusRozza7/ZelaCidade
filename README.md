@@ -61,12 +61,12 @@ database.db
 
 | Campo            | Descrição                 |
 | ---------------- | ------------------------- |
-| id               |
-| tipo_problema    |
-| localizacao      |
-| descricao        |
-| prioridade       |
-| nome_solicitante |
+| id               | Identificador             |
+| tipo_problema    | Tipo da ocorrência        |
+| localizacao      | Lugar do problema         |
+| descricao        | Detalhes do incidente     |
+| prioridade       | Baixa, Média ou Alta      |
+| nome_solicitante | Quem registrou            |
 | data_registro    | Data da ocorrência        |
 | hora_registro    | Hora do registro          |
 | status_resolucao | Status (Padrão: Pendente) |
@@ -109,17 +109,15 @@ Ex: /incidentes/1
 ### BODY (JSON)
 
 ```json
- {
-
-        "tipo_problema": "Iluminação",
-        "localizacao": "Rua das Flores, 123, Bairro das Margaridas",
-        "descricao": "Poste queimado há dias",
-        "prioridade": "Média",
-        "nome_solicitante": "Ana Clara",
-        "data_registro": "16/03/2026",
-        "hora_registro": "10:30"
-    };
-
+{
+  "tipo_problema": "Iluminação",
+  "localizacao": "Rua das Flores, 123, Bairro das Margaridas",
+  "descricao": "Poste queimado há dias",
+  "prioridade": "Média",
+  "nome_solicitante": "Ana Clara",
+  "data_registro": "16/03/2026",
+  "hora_registro": "10:30"
+}
 ```
 
 ### Rota para atualizar um incidente
@@ -132,11 +130,11 @@ Ex: /incidentes/1
 ### Body (JSON)
 
 ```json
- {
-        "descricao": "Poste queimado há dias",
-        "prioridade": "Média",
-        "status_resolucao": "Pendente"
-    };
+{
+  "descricao": "Poste queimado há dias",
+  "prioridade": "Média",
+  "status_resolucao": "Pendente"
+}
 ```
 
 ### Rota para deletar um incidente
